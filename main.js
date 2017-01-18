@@ -69,16 +69,21 @@ document.getElementById("q4d").innerHTML = (num1 / num2) + " when divded.";
 //    that also places the appropriate space between the strings.
 //    Display the value of the third variable within the HTML page.
 
-
-
-
+var str1 = "Im";
+var str2 = "possible";
+var str3 = str1 + " " + str2;
+document.getElementById("q5").innerHTML = "You can't spell " + str1 + str2 + " without " + str3;
 
 
 
 // 6. Add, subract, multiply and divide the strings '5' and '3'.
 //    Observe the results and brieftly explain the results within the HTML page.
 
-
+document.getElementById("q6a").innerHTML = '5' + '3';
+document.getElementById("q6b").innerHTML = '5' - '3';
+document.getElementById("q6c").innerHTML = '5' * '3';
+document.getElementById("q6d").innerHTML = '5' / '3';
+document.getElementById("q6note").innerHTML = "a is concatenation.  b-d convert to type number.";
 
 
 
@@ -87,18 +92,20 @@ document.getElementById("q4d").innerHTML = (num1 / num2) + " when divded.";
 
 // 7. When a button is clicked, add content into the ID "q7".
 
-
-
-
+document.getElementById("callAlert").addEventListener("click",function(){
+  document.getElementById("q7").innerHTML = "👌👌👌👌"
+});
 
 
 
 // 8. Collect a number value from the user and when a button is clicked,
 //    then double user's answer and display that value into the HTML page.
 
-
-
-
+document.getElementById("callDoubleNum").addEventListener("click",function(){
+  var num8 = document.getElementById("doubleNum").value;
+  num8 *= 2;
+  document.getElementById("q8").innerHTML = num8;
+});
 
 
 
@@ -108,9 +115,14 @@ document.getElementById("q4d").innerHTML = (num1 / num2) + " when divded.";
 //    If so, output to the HTML page: Yes, the value of num1 is greater than num2
 //    If not, output to the HTML page: No, the value of num1 is not greater than num2
 
-
-
-
+var num1 = 5;
+var num2 = 10;
+if (num1 > num2) {
+  document.getElementById("q9").innerHTML = "Yes, the value of num1 is greater than num2";
+}
+else {
+  document.getElementById("q9").innerHTML = "No, the value of num1 is not greater than num2";
+}
 
 
 
@@ -121,8 +133,17 @@ document.getElementById("q4d").innerHTML = (num1 / num2) + " when divded.";
 //    If the score is below 59, output to the HTML page "Very bad: study more and retake the test".
 //    Test to make sure each condition is met properly.
 
-
-
+var score = Math.floor(Math.random()*100);
+console.log(score);
+if (score > 90) {
+  document.getElementById("q10").innerHTML = "Great job.";
+}
+else if ((score <= 90) && (score >= 60)) {
+  document.getElementById("q10").innerHTML = "Nice work, keep practicing.";
+}
+else {
+  document.getElementById("q10").innerHTML = "Very bad: study more and retake the test.";
+}
 
 
 
@@ -133,8 +154,9 @@ document.getElementById("q4d").innerHTML = (num1 / num2) + " when divded.";
 //    In a single command, take the user's answers and display into the HTML page the sentence:
 //   "My name is __. I'm __ years old, and I live in __."
 
-
-
+document.getElementById("sentence").addEventListener("click",function(){
+document.getElementById('qa').innerHTML=("My name is " + document.getElementById("name").value + ". I'm " + document.getElementById("age").value + " years old, and I live in " + document.getElementById("city").value + ".");
+});
 
 
 

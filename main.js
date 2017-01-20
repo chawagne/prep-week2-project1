@@ -134,7 +134,7 @@ else {
 //    Test to make sure each condition is met properly.
 
 var score = Math.floor(Math.random()*100);
-console.log(score);
+console.log("10. " + score);
 if (score > 90) {
   document.getElementById("q10").innerHTML = "Great job.";
 }
@@ -164,8 +164,9 @@ document.getElementById('qa').innerHTML=("My name is " + document.getElementById
 //     The rectangle is: 2 inches by 3 inches
 //     Display the result in the HTML page.
 
-
-
+var length = 3;
+var width  = 4;
+document.getElementById("qb").innerHTML=(length * width);
 
 
 
@@ -191,8 +192,25 @@ document.getElementById('qa').innerHTML=("My name is " + document.getElementById
 //    If the score is below 59, display a message of "Very bad: study more and retake the test.".
 //    You can get fancy by adding CSS styles to each of these displays to change the color, too - Green=Good, Orange=OK, Red=Bad
 
+document.getElementById("score-button").addEventListener("click",function(){
+  var eScore = document.getElementById("score").value;
+  
 
+if (eScore > 90) {
+  document.getElementById("qe").innerHTML = "Great job.";
+  document.getElementById("qe").classList.add("status-good");
 
+}
+else if ((eScore <= 90) && (eScore >= 60)) {
+  document.getElementById("qe").innerHTML = "Nice work, keep practicing.";
+  document.getElementById("qe").classList.add("status-ok");
+}
+else {
+  document.getElementById("qe").innerHTML = "Very bad: study more and retake the test.";
+  document.getElementById("qe").classList.add("status-bad");
+
+}
+});
 
 
 /* SANDBOX TRACK
